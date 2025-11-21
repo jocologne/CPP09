@@ -9,10 +9,9 @@
 #include <sstream>
 #include <stdexcept>
 
-class BitcoinExchange
-{
+class BitcoinExchange {
 private:
-    std::map<std::string, float> exchangeRates;
+    std::map<std::string, float> _exchangeRates;
 public:
     BitcoinExchange();
     ~BitcoinExchange();
