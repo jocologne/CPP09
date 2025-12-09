@@ -11,7 +11,7 @@
 #include <sys/time.h>
 #include <climits>
 #include <cstdlib>
-#include <algoritm>
+#include <algorithm>
 
 class PmergeMe {
 private:
@@ -25,8 +25,6 @@ public:
 	//
 	void parseInput(int ac, char** av);
 	void sortAndDisplay();
-	void displayBefore();
-	void displayAfter();
 };
 
 #endif
