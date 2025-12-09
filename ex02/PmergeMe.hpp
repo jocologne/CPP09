@@ -5,6 +5,13 @@
 #include <vector>
 #include <deque>
 #include <iostream>
+#include	<string>
+#include <sstream>
+#include <exception>
+#include <sys/time.h>
+#include <climits>
+#include <cstdlib>
+#include <algoritm>
 
 class PmergeMe {
 private:
