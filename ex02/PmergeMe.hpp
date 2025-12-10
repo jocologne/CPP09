@@ -17,6 +17,7 @@ class PmergeMe {
 private:
 	std::vector<int> _vector;
 	std::deque<int> _deque;
+	double _parseTime;
 public:
 	PmergeMe();
 	PmergeMe(const PmergeMe& other);

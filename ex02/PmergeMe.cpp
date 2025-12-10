@@ -55,6 +55,7 @@ void PmergeMe::parseInput(int ac, char** av) {
 	if (ac < 2){
 		throw std::invalid_argument("Error: no arguments");
 	}
+	double parseStart = getTime();
 	for (int i = 1; i < ac; i++) {
 		std::string arg = av[i];
 		if (!isValidNumber(arg)) {
@@ -64,6 +65,8 @@ void PmergeMe::parseInput(int ac, char** av) {
 		_vector.push_back(num);
 		_deque.push_back(num); 
 	}
+	double parseEnd = getTime();
+	_parseTime = parseEnd - parseStart;
 }
 
 void PmergeMe::sortAndDisplay() {
@@ -83,6 +86,6 @@ void PmergeMe::sortAndDisplay() {
 	double endDeque = getTime();
 	double timeDeque = endDeque - startDeque;
 	display("After: ", _vector);
-	std::cout << "Time to process a range of " << _vector.size() << " elements with std::vector: " << timeVector << " us" << std::endl;
-	std::cout << "Time to process a range of " << _deque.size() << " elements with std::vector: " << timeDeque << " us" << std::endl;
+	std::cout << "Time to process a range of " << _vector.size() << " elements with std::vector: " << timeVector + _parseTime << " us" << std::endl;
+	std::cout << "Time to process a range of " << _deque.size() << " elements with std::deque: " << timeDeque + _parseTime << " us" << std::endl;
 }
